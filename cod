@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Windows 7 Boost 2.0</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1e5799 0%, #2989d8 40%, #7db9e8 100%);
+    display: flex; align-items: center; justify-content: center;
+    padding: 20px;
+  }
+  .window {
+    width: 100%; max-width: 760px;
+    background: #f0f0f0;
+    border-radius: 8px 8px 4px 4px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.3) inset;
+    overflow: hidden;
+  }
+  .titlebar {
+    background: linear-gradient(180deg, #dbeefc 0%, #b8dcf5 45%, #9ecdec 50%, #b8dcf5 55%, #cfe7f7 100%);
+    padding: 8px 12px;
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1px solid #7fa8c9;
+  }
+  .titlebar h1 {
+    font-size: 14px; font-weight: normal; color: #0a2a45;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .titlebar h1::before {
+    content: ""; width: 16px; height: 16px;
+    background: linear-gradient(135deg, #4a9cd6, #1e5799);
+    border-radius: 3px; display: inline-block;
+  }
+  .win-buttons { display: flex; gap: 4px; }
+  .win-buttons span {
+    width: 22px; height: 18px; border-radius: 3px;
+    background: linear-gradient(180deg, #fff, #d0d0d0);
+    border: 1px solid #8a8a8a;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; color: #333; cursor: pointer;
+  }
+  .win-buttons span:hover { background: linear-gradient(180deg, #fff, #b0d4f0); }
+  .win-buttons span.close:hover { background: linear-gradient(180deg, #f88, #c33); color: #fff; }
+
+  .content { padding: 24px; }
+  .hero { text-align: center; margin-bottom: 24px; }
+  .hero h2 { font-size: 26px; color: #1e5799; margin-bottom: 6px; }
+  .hero p { color: #555; font-size: 14px; }
+
+  .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .card {
+    background: linear-gradient(180deg, #fff, #eef4fa);
+    border: 1px solid #c5d9ea;
+    border-radius: 6px;
+    padding: 14px;
+    transition: transform .15s, box-shadow .15s;
+  }
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(30,87,153,0.2);
+  }
+  .card h3 { font-size: 13px; color: #1e5799; margin-bottom: 6px; }
+  .card p { font-size: 12px; color: #666; line-height: 1.4; }
+
+  .actions { display: flex; flex-direction: column; gap: 10px; }
+  .btn {
+    padding: 12px 16px;
+    border: 1px solid #7fa8c9;
+    border-radius: 4px;
+    background: linear-gradient(180deg, #f5fbff 0%, #d6ebf8 50%, #c1e0f3 100%);
+    color: #0a2a45;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: left;
+    display: flex; justify-content: space-between; align-items: center;
+    transition: background .15s;
+  }
+  .btn:hover {
+    background: linear-gradient(180deg, #fff 0%, #e3f2fb 50%, #cfe7f7 100%);
+  }
+  .btn:active { background: linear-gradient(180deg, #b8dcf5, #9ecdec); }
+  .btn small { color: #777; font-size: 11px; }
+
+  .status {
+    margin-top: 16px;
+    padding: 10px 14px;
+    background: #fffbe6;
+    border: 1px solid #e6d27a;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #6b5a00;
+  }
+
+  .footer {
+    text-align: center;
+    padding: 12px;
+    font-size: 11px;
+    color: #888;
+    background: #e8e8e8;
+    border-top: 1px solid #c5d9ea;
+  }
+  .footer a { color: #1e5799; text-decoration: none; }
+  .footer a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<div class="window">
+  <div class="titlebar">
+    <h1>Windows 7 Boost 2.0</h1>
+    <div class="win-buttons">
+      <span>–</span>
+      <span>□</span>
+      <span class="close">×</span>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="hero">
+      <h2>Тулбокс для Windows 7</h2>
+      <p>Чистка, диагностика, бэкап автозагрузки — без смены стиля системы.</p>
+    </div>
+
+    <div class="features">
+      <div class="card">
+        <h3>🧹 Чистка temp</h3>
+        <p>%TEMP%, C:\Windows\Temp, корзина. Освобождает гигабайты.</p>
+      </div>
+      <div class="card">
+        <h3>🌐 Сброс DNS</h3>
+        <p>ipconfig /flushdns — быстрое обновление кеша.</p>
+      </div>
+      <div class="card">
+        <h3>⚡ Prefetch</h3>
+        <p>Удаление файлов старше 30 дней. Безопасно для системы.</p>
+      </div>
+      <div class="card">
+        <h3>📊 Топ процессов</h3>
+        <p>Кто жрёт RAM — список в реальном времени.</p>
+      </div>
+      <div class="card">
+        <h3>🔍 Дубликаты</h3>
+        <p>Поиск повторов в Downloads по MD5-хешу.</p>
+      </div>
+      <div class="card">
+        <h3>💾 Бэкап автозагрузки</h3>
+        <p>Только чтение реестра. Сохранение в txt для отката.</p>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="btn" onclick="runAction('Полная чистка')">
+        <span>1. Полная чистка</span>
+        <small>temp + корзина + DNS + prefetch</small>
+      </button>
+      <button class="btn" onclick="runAction('Очистка temp')">
+        <span>2. Только temp</span>
+        <small>быстро освободить место</small>
+      </button>
+      <button class="btn" onclick="runAction('Очистка корзины')">
+        <span>3. Только корзина</span>
+        <small>SHEmptyRecycleBin</small>
+      </button>
+      <button class="btn" onclick="runAction('Сброс DNS')">
+        <span>4. Сброс DNS</span>
+        <small>ipconfig /flushdns</small>
+      </button>
+      <button class="btn" onclick="runAction('Топ процессов')">
+        <span>5. Топ-10 процессов по RAM</span>
+        <small>psutil.process_iter</small>
+      </button>
+      <button class="btn" onclick="runAction('Бэкап автозагрузки')">
+        <span>7. Бэкап автозагрузки</span>
+        <small>только чтение, без удаления</small>
+      </button>
+    </div>
+
+    <div class="status" id="status">
+      ⚠️ Это HTML-презентация. Реальная работа — через <code>win7_boost.py</code>.
+      Кнопки ниже — заглушки, показывают, что бы делал скрипт.
+    </div>
+  </div>
+
+  <div class="footer">
+    Windows 7 Boost 2.0 — концепт · 
+    <a href="https://github.com/" target="_blank">GitHub</a> · 
+    Реальный скрипт: <code>win7_boost.py</code>
+  </div>
+</div>
+
+<script>
+  function runAction(name) {
+    const status = document.getElementById('status');
+    const messages = {
+      'Полная чистка': '🧹 Полная чистка: temp + корзина + DNS + prefetch → выполнено бы скриптом win7_boost.py (пункт 1)',
+      'Очистка temp': '🧹 Очистка temp: %TEMP%, C:\\Windows\\Temp → выполнено бы скриптом (пункт 2)',
+      'Очистка корзины': '🗑️ Корзина: SHEmptyRecycleBinW → выполнено бы скриптом (пункт 3)',
+      'Сброс DNS': '🌐 DNS: ipconfig /flushdns → выполнено бы скриптом (пункт 4)',
+      'Топ процессов': '📊 Топ процессов: psutil.process_iter → выполнено бы скриптом (пункт 5)',
+      'Бэкап автозагрузки': '💾 Бэкап автозагрузки: winreg.EnumValue → выполнено бы скриптом (пункт 7)'
+    };
+    status.innerHTML = messages[name] || 'Неизвестное действие';
+    status.style.background = '#e6ffe6';
+    status.style.borderColor = '#7ac97a';
+    status.style.color = '#1a5a1a';
+    setTimeout(() => {
+      status.style.background = '#fffbe6';
+      status.style.borderColor = '#e6d27a';
+      status.style.color = '#6b5a00';
+      status.innerHTML = '⚠️ Это HTML-презентация. Реальная работа — через <code>win7_boost.py</code>. Кнопки ниже — заглушки, показывают, что бы делал скрипт.';
+    }, 3000);
+  }
+</script>
+
+</body>
+</html>
