@@ -71,6 +71,37 @@
   .card h3 { font-size: 13px; color: #1e5799; margin-bottom: 6px; }
   .card p { font-size: 12px; color: #666; line-height: 1.4; }
 
+  /* Стили для кнопки скачивания */
+  .download-container {
+    text-align: center; 
+    margin-bottom: 25px;
+    padding: 20px;
+    background: #e6f2fb;
+    border: 1px dashed #7fa8c9;
+    border-radius: 8px;
+  }
+  .btn-download {
+    display: inline-block;
+    padding: 15px 30px;
+    background: linear-gradient(180deg, #a8e063 0%, #56ab2f 100%);
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 6px;
+    border: 1px solid #4a8e26;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+    transition: all 0.2s;
+  }
+  .btn-download:hover {
+    transform: scale(1.05);
+    background: linear-gradient(180deg, #b8ed73 0%, #66bb3f 100%);
+  }
+  .download-container p {
+    font-size: 12px; color: #555; margin-top: 10px;
+  }
+
   .actions { display: flex; flex-direction: column; gap: 10px; }
   .btn {
     padding: 12px 16px;
@@ -130,6 +161,16 @@
       <p>Чистка, диагностика, бэкап автозагрузки — без смены стиля системы.</p>
     </div>
 
+    <!-- БЛОК СКАЧИВАНИЯ -->
+    <div class="download-container">
+      <a href="win7_boost.py" download class="btn-download">
+        ⬇️ Скачать win7_boost.py
+      </a>
+      <p>
+        Нажми, чтобы скачать скрипт. На ноуте установи Python 3.8, введи <code>pip install "psutil&lt;6.0"</code> и запусти файл от имени администратора.
+      </p>
+    </div>
+
     <div class="features">
       <div class="card">
         <h3>🧹 Чистка temp</h3>
@@ -185,14 +226,14 @@
     </div>
 
     <div class="status" id="status">
-      ⚠️ Это HTML-презентация. Реальная работа — через <code>win7_boost.py</code>.
+      ⚠️ Это HTML-презентация. Реальная работа — через скачанный <code>win7_boost.py</code>.
       Кнопки ниже — заглушки, показывают, что бы делал скрипт.
     </div>
   </div>
 
   <div class="footer">
     Windows 7 Boost 2.0 — концепт · 
-    <a href="https://github.com/" target="_blank">GitHub</a> · 
+    <a href="https://github.com/v3014185-coder/Windows7-" target="_blank">GitHub</a> · 
     Реальный скрипт: <code>win7_boost.py</code>
   </div>
 </div>
@@ -216,7 +257,7 @@
       status.style.background = '#fffbe6';
       status.style.borderColor = '#e6d27a';
       status.style.color = '#6b5a00';
-      status.innerHTML = '⚠️ Это HTML-презентация. Реальная работа — через <code>win7_boost.py</code>. Кнопки ниже — заглушки, показывают, что бы делал скрипт.';
+      status.innerHTML = '⚠️ Это HTML-презентация. Реальная работа — через скачанный <code>win7_boost.py</code>. Кнопки ниже — заглушки, показывают, что бы делал скрипт.';
     }, 3000);
   }
 </script>
